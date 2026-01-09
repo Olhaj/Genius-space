@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    border: 1px dotted black;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.item.red {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    /* transform: translate(-10px, 50px); */
+    /* transform: translateY(-20px); */
+    transform: translateX(20px);
+    /* transition-property: background-color;  свойство, к которому применяется анимация
+    transition-duration: 2s; длительность анимации
+    transition: background-color 2s; сокращенная запись для свойства и длительности анимации 
+    transition: background-color 2s, color 2s;  анимация для двух свойств */
+    transition: all 2s; /* анимация для всех свойств  так делать не рекомендують*/
+    transition-timing-function: linear; /* функция времени анимации */
+    transition-delay: 1s; /* задержка перед началом анимации */
+}
+
+.item.red:hover {
+    background-color: pink;  /* при наведении меняем цвет красного квадрата на розовый */ 
+    color: black; /* при наведении меняем цвет текста на черный */
+}
+
+.item.green {
+    width: 150px;
+    height: 150px;
+    background-color: green; 
+    /* transform: rotate(90deg); // это поворот на 90 градусов по часовой стрелке */
+    /* transform: rotate(-45deg); // это поворот на 45 градусов против час */
+    /* transform: rotate(1turn);  // это поворот на 360 градусов по часовой стрелке */
+    /* transform: rotate(0.5turn);   это поворот на 180 градусов по часовой стрелке */
+    /* animation-name: spin;  имя анимации 
+    animation-duration: 4s;  длительность анимации 
+    animation-delay: 5s;  задержка перед началом анимации 
+    animation-iteration-count: 5s;  количество повторений анимации */
+    /* animation-iteration-count: infinite;  бесконечное повторение анимации */
+    animation: spin 4s 2s infinite; /* сокращенная запись для имени, длительности, задержки и количества повторений анимации */
+} 
+
+@keyframes spin {
+    /* не забываем за имя фрейму */
+    /* from {
+        transform: rotate(0); // начальное состояние анимации - поворот на 0 градусов 
+    }
+
+    to {
+        transform: rotate(360deg); // конечное состояние анимации - поворот на 360 градусов 
+    } */
+    
+    0% {
+        transform: rotate(0); /* начальное состояние анимации - поворот на 0 градусов */
+        background-color: green; /* начальный цвет - зеленый */
+    }
+
+    50% {
+        transform: rotate(180deg); /* середина анимации - поворот на 180 градусов */
+        background-color: lime; /* изменение цвета на ярко-зеленый */
+    }
+
+    100% {
+        transform: rotate(360deg); /* конечное состояние анимации - поворот на 360 градусов */
+        background-color: green; /* возвращение к начальному цвету - зеленый */
+    }
+
+}
+
+.item.blue {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    transform: scale(1.5); /* увеличение размера в 1.5 раза по обеим осям */
+    /* transform: scaleX(2); // увеличение размера в 2 раза по оси X */
+    /* transform: scaleY(0.5); // уменьшение размера в 2 раза по оси Y */
+}
+
+.item.orange {
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    /* z-index: 1; // поднимаем оранжевый квадрат выше остальных элементов */
+    transform: skew(20deg, 20deg); /* наклон по оси X на 20 градусов и по оси Y на 20 градусов */
+}

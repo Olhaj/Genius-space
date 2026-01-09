@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <!-- выпадающее окно и можно выбрать что то одно -->
+    <!-- <select name="" id="">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select> -->
+
+    <!-- <label for="user-comment">Введіть ваш коментар</label>
+                     // что бы сделать окно для ввода больших текстов 
+                    <textarea name="user-comment" id="user-comment">
+                    </textarea>  -->
+
+    <!-- <input type="radio" id="small" name="size">  таким образом я могу сделать пункт для выбора одного елемента из группы 
+                    <label for="small">Small</label>
+    
+                    <input type="radio" id="medium" name="size">
+                    <label for="medium">Medium</label>
+    
+                    <input type="radio" id="large" name="size">
+                    <label for="large">Large</label>
+    
+                    <input type="checkbox" id="small" name="size-s">  таким образом я могу сделать пункт для выбора нескольких елемента, но нужно делать разные атрибуты имени 
+                    <label for="small">Small</label>
+                    
+                    <input type="checkbox" id="medium" name="size-m">
+                    <label for="medium">Medium</label>
+    
+                    <input type="checkbox" id="large" name="size-l">
+                    <label for="large">Large</label> -->
+    <fieldset>
+        <legend>Контактна інформація</legend>
+        <label for="user-name">Ім’я</label>
+        <input type="text" id="user-name" name="user-name">
+        <label for="user-tel">Телефон</label>
+        <input type="text" id="user-tel" name="user-tel">
+        <label for="user-email">Електронна пошта</label>
+        <input type="email" id="user-email" name="user-email">
+    </fieldset>
+    <fieldset>
+        <legend>Контактна інформація</legend>
+        <select name="" id="">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+    </fieldset>
+    <!-- можна стилями убрать все рамки и создать так как мы хотим -->
+
+    <div class="form-field">
+        <input class="form-input" type="text" id="user-name" name="user-name" />
+        <label class="form-label" for="user-name">Ім’я</label>
+    </div>
+
+    <div class="form-field">
+        <input class="form-input" type="tel" id="user-tel" name="user-tel" />
+        <label class="form-label" for="user-tel">Телефон</label>
+    </div>
+
+    <div class="form-field">
+        <input class="form-input" type="email" id="user-email" name="user-email" />
+        <label class="form-label" for="user-email">Електронна пошта</label>
+    </div>
+    <!-- style -->
+    .form-input:focus + .form-label {
+    transform: translate(-36px, -40px);
+    }
+</body>
+
+</html>
